@@ -1,8 +1,8 @@
 {
    "manifest_version": 2,
-   "name": "Save your wrist from ctrl-w",
+   "name": "Close current tab by alt-w",
    "description": "shortcut key to close tab by alt-w on windows",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "content_scripts": [ {
       "all_frames": true,
       "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],

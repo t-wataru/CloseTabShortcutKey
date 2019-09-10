@@ -1,4 +1,4 @@
-let debug = true;
+let debug = false;
 log = debug ? console.log.bind(null, "DEBUG: ") : ()=>{};
 
 let closingTab = false;
