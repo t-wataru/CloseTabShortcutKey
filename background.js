@@ -1,11 +1,11 @@
-let debug = true;
-log = debug ? console.log.bind(null, "DEBUG: ") : ()=>{};
+let debug = false;
+debugLog = debug ? console.log.bind(null, "DEBUG: ") : ()=>{};
 
-browser.runtime.onMessage.addListener((message, sender) => {
-    log("got messsage", message);
-    if (message.closeMe) {
-        browser.tabs.query({currentWindow: true, active: true}).then(
-          tabs=>browser.tabs.remove(tabs[0].id)
-        );
-    }
+browser.commands.onCommand.addListener(function(command) {
+  debugLog(command);
+  if (command == "_close_current_tab") {
+    browser.tabs.query({currentWindow: true, active: true}).then(
+      tabs=>browser.tabs.remove(tabs[0].id)
+    );
+  }
 });

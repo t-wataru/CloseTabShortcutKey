@@ -2,7 +2,7 @@
    "manifest_version": 2,
    "name": "Close current tab by alt-w",
    "description": "shortcut key to close tab by alt-w on windows",
-   "version": "1.0.1",
+   "version": "1.0.3",
    "content_scripts": [ {
       "all_frames": true,
       "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],
@@ -20,5 +20,13 @@
      "scripts": [
        "background.js"
      ]
-   }
+   },
+   "commands": {
+    "_close_current_tab": {
+        "suggested_key": {
+            "default": "Alt+W"
+        },
+        "description": "Close current tab"
+    }
+}
 }
